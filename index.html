@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ozon Detective</title>
+    <!-- Подключаем скрипт Телеграма, чтобы приложение понимало, где оно находится -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+    <style>
+        body {
+            font-family: sans-serif;
+            background-color: var(--tg-theme-bg-color, #fff); /* Цвет фона как в Телеграме */
+            color: var(--tg-theme-text-color, #000); /* Цвет текста как в Телеграме */
+            padding: 20px;
+            text-align: center;
+        }
+        h1 {
+            font-size: 20px;
+        }
+        .btn {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>🕵️‍♂️ Ozon Detective</h1>
+    <p>Здесь будет поиск дешевых товаров и анализ отзывов.</p>
+    
+    <button class="btn" onclick="sendData()">Проверить товар</button>
+
+    <script>
+        // Инициализация Телеграм Mini App
+        let tg = window.Telegram.WebApp;
+        tg.expand(); // Раскрыть приложение на весь экран
+
+        function sendData() {
+            // Пока просто покажем сообщение
+            tg.showPopup({
+                title: 'Тест',
+                message: 'Кнопка работает! Скоро здесь будет поиск.',
+                buttons: [{type: 'ok'}]
+            });
+        }
+    </script>
+</body>
+</html>
